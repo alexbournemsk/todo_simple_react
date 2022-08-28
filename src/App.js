@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Welcome from './components/Welcome';
+import TodoList from './components/TodoList';
+
+let itemList = ['a'];
+
+const handleClear = () => {
+  console.log('cleara');
+  itemList = [];
+  console.log('cleara');
+
+}
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Welcome />} />
+          <Route path='/todo'  element={<TodoList />} />
+        </Routes>
+
+      </BrowserRouter>
+
+    </>
   );
 }
 
