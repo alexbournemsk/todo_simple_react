@@ -8,13 +8,14 @@ function TodoForm(props) {
     const handleInputChange = (evt) => {
         setInput(evt.target.value)
     }
-    const handleSubmit = (evt) => {
+    const handleSubmit = (evt) => { 
         
         evt.preventDefault();
 
         addTodo({
             id: Math.floor(Math.random() * 10000),
-            text: input
+            text: input,
+            isComplete: false
         })
         setInput('')
     }
